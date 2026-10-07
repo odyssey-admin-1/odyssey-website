@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #050816;
+  --color-navy-900: #0a0f1c;
+  --color-navy-800: #111827;
+  --color-navy-700: #1e293b;
+  --color-accent: #3b87ff;
+  --color-accent-light: #60a5fa;
+  --color-accent-glow: #93c5fd;
+  --color-sky: #0ea5e9;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-navy-950 text-white antialiased;
+  font-family: var(--font-sans);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f1c;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Glass effect utility */
+.glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.glass-strong {
+  background: rgba(10, 15, 28, 0.85);
+  backdrop-filter: blur(24px);
+  border: none;
+  border-bottom: 1px solid rgba(59, 135, 255, 0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #3b87ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle grid background */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(59, 135, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 135, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
